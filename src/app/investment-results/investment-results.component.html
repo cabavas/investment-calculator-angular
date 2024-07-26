@@ -1,0 +1,27 @@
+@if(!results()) {
+<p>Please enter some values and press "Calculate.</p>
+}
+@else {
+<table>
+    <thead>
+        <tr>
+            <th>Month</th>
+            <th>Investment Value</th>
+            <th>Interest (Month)</th>
+            <th>Total Interest</th>
+            <th>Invested Capital</th>
+        </tr>
+    </thead>
+    <tbody>
+@for(result of results(); track result.month){
+<tr>
+    <td>{{result.month}}</td>
+    <td>{{result.totalAmountInvested | currency}}</td>
+    <td>{{result.interest | currency}}</td>
+    <td>{{result.totalInterest | currency}}</td>
+    <td>{{result.totalAmountInvested | currency}}</td>
+</tr>
+}
+    </tbody>
+</table>
+}
